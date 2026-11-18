@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Messmate - Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="report-page" onload="showReport()">
+
+    <div id="topbar">
+        <a href="index.html" id="logo">Messmate</a>
+        <div id="menu">
+            <a href="index.html">Home</a>
+            <a href="feedback.html">Give Feedback</a>
+            <a href="report.html" class="current">Report</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <div class="page-title">
+        <h1>Feedback Report</h1>
+        <p>All feedback in one place, with simple numbers.</p>
+    </div>
+
+    <div class="wrap">
+
+        <div class="stats">
+            <div class="stat blue">
+                <p class="stat-number" id="totalCount">0</p>
+                <p>Total feedback</p>
+            </div>
+            <div class="stat amber">
+                <p class="stat-number" id="avgRating">0</p>
+                <p>Average rating (out of 5)</p>
+            </div>
+            <div class="stat red">
+                <p class="stat-number" id="lowCount">0</p>
+                <p>Low ratings (1 or 2)</p>
+            </div>
+        </div>
+
+        <h2 class="chart-title">Rating Chart</h2>
+        <div id="barChart"></div>
+
+        <div class="filter-row">
+            <p>Show meal:</p>
+            <select id="filterMeal" onchange="showReport()">
+                <option value="All">All meals</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+            <button class="clear-btn" onclick="clearAll()">Delete All Feedback</button>
+        </div>
+
+        <div class="table-scroll">
+            <table id="feedbackTable"></table>
+        </div>
+        <div id="emptyNote"></div>
+
+    </div>
+
+    <div id="footer">
+        <a href="index.html">Home</a>
+        <a href="feedback.html">Give Feedback</a>
+        <a href="report.html">Report</a>
+        <a href="about.html">About</a>
+        <p>Messmate | Student Mess Feedback System | HTML, CSS and JavaScript Project</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
